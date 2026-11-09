@@ -1,18 +1,22 @@
+<!-- ==========================================
+     FILE 1: index.html (Save this exact code)
+     ========================================== -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontline Accountancy Experts Ltd | Accountants in Nottingham</title>
+    <title>Frontline Accountancy Experts | Accountants in Nottingham</title>
     <style>
         :root {
-            --primary: #0f172a;
-            --secondary: #2563eb;
-            --accent: #38bdf8;
-            --text: #334155;
+            --primary-color: #101c36;
+            --secondary-color: #1e3a8a;
+            --accent-color: #2563eb;
+            --text-color: #334155;
             --light-bg: #f8fafc;
             --white: #ffffff;
-            --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-color: #e2e8f0;
+            --max-width: 1100px;
         }
 
         * {
@@ -22,22 +26,23 @@
         }
 
         body {
-            font-family: var(--font);
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
             line-height: 1.6;
             background-color: var(--white);
         }
 
+        /* Header & Navigation */
         header {
             background-color: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: var(--max-width);
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -45,314 +50,334 @@
             padding: 20px;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
+        .logo-area {
+            display: flex;
+            align-items: center;
             text-decoration: none;
         }
 
-        .logo span {
-            color: var(--secondary);
+        .logo-img {
+            max-height: 45px;
+            width: auto;
+        }
+
+        .logo-fallback {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo-fallback span {
+            color: var(--accent-color);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--text);
-            margin-left: 20px;
+            color: var(--text-color);
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 15px;
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
-            color: var(--secondary);
+            color: var(--accent-color);
         }
 
-        .cta-btn {
-            background-color: var(--secondary);
+        nav a.btn-nav-cta {
+            background-color: var(--accent-color);
             color: var(--white);
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 4px;
             font-weight: 600;
-            text-decoration: none;
         }
 
-        .cta-btn:hover {
-            background-color: var(--primary);
-            color: var(--white);
+        nav a.btn-nav-cta:hover {
+            background-color: var(--secondary-color);
         }
 
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
-            color: var(--white);
-            padding: 100px 20px;
-            text-align: center;
+            padding: 80px 20px;
+            background-color: var(--white);
+            text-align: left;
         }
 
-        .hero-content {
-            max-width: 800px;
+        .hero-container {
+            max-width: var(--max-width);
             margin: 0 auto;
         }
 
-        .hero-tagline {
-            color: var(--accent);
+        .hero-sub {
+            color: var(--accent-color);
             font-weight: 600;
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 46px;
+            color: var(--primary-color);
             line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 800px;
         }
 
         .hero p {
             font-size: 18px;
-            margin-bottom: 40px;
-            color: #cbd5e1;
+            color: #475569;
+            margin-bottom: 35px;
+            max-width: 700px;
         }
 
-        .hero-buttons a {
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            margin: 0 10px;
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-main {
             display: inline-block;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary);
+            text-decoration: none;
+            background-color: var(--primary-color);
             color: var(--white);
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.2s;
         }
 
-        .btn-primary:hover {
-            background-color: var(--white);
-            color: var(--primary);
+        .btn-main:hover {
+            background-color: var(--secondary-color);
         }
 
-        .btn-secondary {
-            border: 2px solid var(--white);
-            color: var(--white);
+        .btn-outline {
+            display: inline-block;
+            text-decoration: none;
+            border: 1px solid #cbd5e1;
+            color: var(--primary-color);
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.2s;
         }
 
-        .btn-secondary:hover {
-            background-color: var(--white);
-            color: var(--primary);
+        .btn-outline:hover {
+            background-color: var(--light-bg);
         }
 
+        /* Section Layouts */
         .section {
             padding: 80px 20px;
-            max-width: 1200px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-bg {
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: var(--max-width);
             margin: 0 auto;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
+        .section-title {
             font-size: 32px;
-            color: var(--primary);
-            margin-bottom: 15px;
+            color: var(--primary-color);
+            margin-bottom: 12px;
         }
 
-        .grid {
+        .section-desc {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 45px;
+        }
+
+        /* Services Grid */
+        .grid-services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .card {
-            background-color: var(--light-bg);
+        .service-card {
+            background-color: var(--white);
             padding: 30px;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid var(--secondary);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
+        .service-card h3 {
             font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 12px;
         }
 
-        .why-us {
-            background-color: var(--light-bg);
+        .service-card p {
+            font-size: 15px;
+            color: #475569;
         }
 
-        .why-us-grid {
+        /* Why Choose Us Section */
+        .grid-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
 
-        .value-prop h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 22px;
+        .feature-item h3 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 12px;
         }
 
-        .cta-banner {
-            background-color: var(--light-bg);
+        .feature-item p {
+            font-size: 15px;
+            color: #475569;
+        }
+
+        /* Software Strip */
+        .software-strip {
+            background-color: var(--white);
+            padding: 40px 20px;
             text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid var(--border-color);
         }
 
-        .cta-banner h2 {
-            font-size: 28px;
-            color: var(--primary);
+        .software-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .software-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            font-weight: 700;
+            font-size: 20px;
+            color: #94a3b8;
+        }
+
+        /* Chat Section Banner */
+        .chat-banner {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--white);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .chat-banner h2 {
+            font-size: 32px;
+            color: var(--primary-color);
             margin-bottom: 15px;
         }
 
-        .cta-banner p {
-            margin-bottom: 25px;
+        .chat-banner p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 30px;
         }
 
+        /* Footer */
         footer {
-            background-color: var(--primary);
-            color: #94a3b8;
-            padding: 60px 20px 20px;
+            background-color: var(--light-bg);
+            padding: 60px 20px 30px;
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-grid {
-            max-width: 1200px;
+            max-width: var(--max-width);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 16px;
+            color: var(--primary-color);
+            font-size: 15px;
+            margin-bottom: 18px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .footer-col p, .footer-col a {
-            color: #cbd5e1;
+            font-size: 14px;
+            color: #475569;
             text-decoration: none;
             margin-bottom: 10px;
             display: block;
         }
 
         .footer-col a:hover {
-            color: var(--accent);
+            color: var(--accent-color);
         }
 
         .footer-bottom {
-            max-width: 1200px;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding-top: 20px;
-            border-top: 1px solid #334155;
-            text-align: center;
-            font-size: 14px;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #94a3b8;
         }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
                 gap: 15px;
+                text-align: center;
             }
-            nav a {
-                margin: 0 10px;
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
             }
             .hero h1 {
                 font-size: 32px;
             }
-            .hero-buttons a {
-                margin: 10px 5px;
-                width: 80%;
+            .hero-btns {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Frontline<span>Accountancy</span></a>
+            <a href="index.html" class="logo-area">
+                <!-- If you upload logo.png to github, it replaces this text automatically -->
+                <img src="logo.png" alt="Frontline Accountancy Experts" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+                <div id="logo-text" class="logo-fallback" style="display:none;">Frontline<span>Accountancy</span></div>
+            </a>
             <nav>
-                <a href="#">Home</a>
-                <a href="#services">Services</a>
-                <a href="#why-us">About</a>
-                <a href="#contact" class="cta-btn">Get in touch</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <p class="hero-tagline">Expert Accountants · Nottingham</p>
-            <h1>Accountancy that keeps your business on track</h1>
-            <p>Bookkeeping, payroll, annual accounts, and self-assessments for businesses across Nottingham and the UK.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Get in touch</a>
-                <a href="#services" class="btn-secondary">See our services</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section">
-        <div class="section-header">
-            <h2>Services We Offer</h2>
-            <p>Everything you need to stay compliant with Companies House and HMRC.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <h3>Bookkeeping</h3>
-                <p>Accurate digital record keeping, bank reconciliation, and financial data tracking.</p>
-            </div>
-            <div class="card">
-                <h3>Payroll</h3>
-                <p>Timely payroll runs, digital payslips, and RTI processing directly to HMRC.</p>
-            </div>
-            <div class="card">
-                <h3>Annual Accounts</h3>
-                <p>Comprehensive statutory year-end financial accounts submitted to Companies House and HMRC.</p>
-            </div>
-            <div class="card">
-                <h3>Self Assessments</h3>
-                <p>Error-free individual personal tax calculation and digital filing for directors and sole traders.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="why-us" class="section why-us">
-        <div class="section-header">
-            <h2>Why Choose Us</h2>
-            <p>Reliable, transparent financial guidance for your enterprise.</p>
-        </div>
-        <div class="why-us-grid">
-            <div class="value-prop">
-                <h3>Straight answers</h3>
-                <p>We speak in plain language, helping you understand your company figures without the jargon.</p>
-            </div>
-            <div class="value-prop">
-                <h3>Nothing missed</h3>
-                <p>We track filing deadlines closely so your paperwork is always submitted on time.</p>
-            </div>
-            <div class="value-prop">
-                <h3>Fees agreed upfront</h3>
-                <p>Clear, fixed-price quotes with no unexpected invoice surprises.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="cta-banner">
-        <h2>Let's have a chat</h2>
-        <p>Get in touch with our Nottingham team today.</p>
+                <a href="index.html">Home</a>
