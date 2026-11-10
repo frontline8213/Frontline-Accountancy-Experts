@@ -1,315 +1,175 @@
-:root {
-    --primary: #0C2340;
-    --secondary: #00A854;
-    --dark: #1E293B;
-    --light: #F8FAFC;
-    --gray: #64748B;
-    --border: #E2E8F0;
-}
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontline Accountancy Experts | Nottingham Accountants</title>
+    <style>
+        :root {
+            --primary: #0C2340;
+            --secondary: #00A854;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+            --gray: #64748B;
+            --border: #E2E8F0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { color: var(--dark); line-height: 1.6; background-color: #FFFFFF; padding-top: 80px; }
+        header { position: fixed; top: 0; left: 0; width: 100%; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.05); z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; }
+        .logo-area { font-weight: 700; font-size: 1.35rem; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        nav ul { display: flex; list-style: none; gap: 25px; align-items: center; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: var(--secondary); }
+        .cta-btn { background: var(--primary); color: #FFFFFF !important; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 600; }
+        section { padding: 70px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.25rem; color: var(--primary); margin-bottom: 45px; font-weight: 700; position: relative; }
+        .section-title::after { content: ''; display: block; width: 45px; height: 4px; background: var(--secondary); margin: 10px auto 0 auto; }
+        #home { padding: 100px 20px; text-align: center; background: linear-gradient(180deg, #F1F5F9 0%, #FFFFFF 100%); }
+        #home h1 { font-size: 2.8rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
+        #home p { font-size: 1.25rem; color: var(--gray); margin-bottom: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: #FFFFFF; padding: 35px 25px; border-radius: 6px; border: 1px solid var(--border); }
+        .card h3 { margin-bottom: 12px; font-size: 1.25rem; color: var(--primary); }
+        .card p { color: var(--gray); font-size: 0.95rem; }
+        #why-us { background: var(--light); max-width: 100%; }
+        .software-section { text-align: center; margin-top: 50px; padding-top: 40px; border-top: 1px solid var(--border); }
+        .software-logos { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 20px; }
+        .software-logos span { background: #FFFFFF; padding: 10px 20px; border-radius: 4px; border: 1px solid var(--border); font-weight: 600; color: #475569; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .contact-details-block { background: var(--light); padding: 35px; border-radius: 6px; border: 1px solid var(--border); }
+        .contact-item { margin-bottom: 20px; }
+        .contact-item strong { display: block; color: var(--gray); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 4px; }
+        .contact-item p, .contact-item a { font-size: 1.15rem; color: var(--primary); text-decoration: none; font-weight: 600; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--primary); }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; }
+        .submit-btn { background: var(--secondary); color: #FFFFFF; border: none; padding: 12px; border-radius: 4px; font-weight: 600; cursor: pointer; width: 100%; }
+        footer { background: var(--primary); color: #FFFFFF; padding: 40px 20px; text-align: center; margin-top: 40px; border-top: 4px solid var(--secondary); }
+        .footer-bottom { margin-top: 20px; padding-top: 20px; border-top: 1px solid #1E3A5F; font-size: 0.85rem; color: #94A3B8; }
+    </style>
+</head>
+<body>
 
-html {
-    scroll-behavior: smooth;
-}
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo-area">Frontline Accountancy Experts</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#contact" class="cta-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-body {
-    color: var(--dark);
-    line-height: 1.6;
-    background: linear-gradient(180deg, #E2E8F0 0%, #F8FAFC 100%);
-    padding-top: 80px;
-}
+    <section id="home">
+        <h1>Frontline Accountancy Experts</h1>
+        <p>Accountancy to keep your business on track</p>
+        <a href="#contact" class="cta-btn" style="padding: 12px 25px;">Get in Touch</a>
+    </section>
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--primary);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
+    <section id="services">
+        <h2 class="section-title">Services We Offer</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Annual Accounts & Corporation Tax</h3>
+                <p>Year-end financial statement preparation and timely submission to Companies House and HMRC.</p>
+            </div>
+            <div class="card">
+                <h3>Self Assessment</h3>
+                <p>Personal tax filings managed seamlessly for sole traders, landlords, and directors.</p>
+            </div>
+            <div class="card">
+                <h3>VAT & Making Tax Digital</h3>
+                <p>Digital quarterly VAT bookkeeping submissions matching modern MTD statutory guidelines.</p>
+            </div>
+            <div class="card">
+                <h3>Payroll & Workplace Pensions</h3>
+                <p>Complete staff payroll structures, continuous RTI filings, and auto-enrolment management.</p>
+            </div>
+            <div class="card">
+                <h3>Company Formations</h3>
+                <p>New business limited incorporation configurations and ongoing statutory Companies House updates.</p>
+            </div>
+        </div>
+    </section>
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 20px;
-}
+    <section id="why-us">
+        <div class="section-title">Why Clients Stay With Us</div>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Fees Agreed Upfront</h3>
+                <p>Firm, completely transparent quotes before work starts. Absolutely no hidden costs.</p>
+            </div>
+            <div class="card">
+                <h3>No-Jargon Answers</h3>
+                <p>Clear, direct financial updates written in plain English so you always stay informed.</p>
+            </div>
+            <div class="card">
+                <h3>Licensed & Regulated</h3>
+                <p>Proudly practice-monitored under the strict guidelines of the Institute of Certified Bookkeepers (ICB).</p>
+            </div>
+        </div>
+        <div class="software-section">
+            <h4>Software We Support</h4>
+            <div class="software-logos">
+                <span>Xero</span><span>QuickBooks</span><span>FreeAgent</span><span>Sage</span><span>Capium</span>
+            </div>
+        </div>
+    </section>
 
-.logo-area {
-    font-weight: 700;
-    font-size: 1.35rem;
-    color: #FFFFFF;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    <section id="contact">
+        <h2 class="section-title">Let's Have a Chat</h2>
+        <div class="contact-grid">
+            <div class="contact-details-block">
+                <div class="contact-item">
+                    <strong>Direct Email</strong>
+                    <a href="mailto:info@frontacc.co.uk">info@frontacc.co.uk</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Telephone Line</strong>
+                    <a href="tel:07774268823">07774268823</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Office Location</strong>
+                    <p>Nottingham, United Kingdom</p>
+                    <p style="font-size: 0.85rem; color: var(--gray); font-weight: normal; margin-top: 5px;">Remote Practice — By Appointment Only</p>
+                </div>
+            </div>
+            <div class="form-block">
+                <form action="https://formspree.io" method="POST">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="name" required placeholder="e.g. John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="_replyto" required placeholder="e.g. john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>How can we help your business?</label>
+                        <textarea name="message" rows="4" required placeholder="Tell us briefly about your required financial support..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    align-items: center;
-}
+    <footer>
+        <h4>Frontline Accountancy Experts Ltd</h4>
+        <p style="color: #94A3B8; font-size: 0.9rem; margin-top: 5px;">Licensed Practice Firm with the Institute of Certified Bookkeepers (ICB)</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Frontline Accountancy Experts Ltd. All rights reserved.</p>
+            <p style="margin-top: 5px;">Registered in England & Wales | Company No. 15494391</p>
+        </div>
+    </footer>
 
-nav a {
-    text-decoration: none;
-    color: #E2E8F0;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-}
+</body>
+</html>
 
-nav a:hover {
-    color: #FFFFFF;
-}
-
-.cta-btn {
-    background: var(--secondary);
-    color: #FFFFFF !important;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.2s;
-}
-
-.cta-btn:hover {
-    background: #008742;
-}
-
-section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.25rem;
-    color: var(--primary);
-    margin-bottom: 45px;
-    font-weight: 700;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 45px;
-    height: 4px;
-    background: var(--secondary);
-    margin: 10px auto 0 auto;
-    border-radius: 2px;
-}
-
-#home {
-    padding: 100px 20px;
-    text-align: center;
-    background: transparent;
-}
-
-#home h1 {
-    font-size: 3rem;
-    color: var(--primary);
-    margin-bottom: 15px;
-    font-weight: 800;
-}
-
-#home p {
-    font-size: 1.35rem;
-    color: var(--gray);
-    margin-bottom: 35px;
-}
-
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: #FFFFFF;
-    padding: 40px 30px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.card h3 {
-    margin-bottom: 12px;
-    font-size: 1.3rem;
-    color: var(--primary);
-    font-weight: 700;
-}
-
-.card p {
-    color: var(--gray);
-    font-size: 0.95rem;
-}
-
-#why-us {
-    max-width: 100%;
-    background: transparent;
-}
-
-.software-section {
-    text-align: center;
-    margin-top: 50px;
-    padding-top: 40px;
-    border-top: 1px solid var(--border);
-}
-
-.software-section h4 {
-    font-size: 0.95rem;
-    color: var(--gray);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.software-logos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.software-logos span {
-    background: #FFFFFF;
-    padding: 10px 20px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    font-weight: 600;
-    color: #475569;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-}
-
-.contact-details-block {
-    background: #FFFFFF;
-    padding: 35px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-}
-
-.contact-item {
-    margin-bottom: 25px;
-}
-
-.contact-item:last-child {
-    margin-bottom: 0;
-}
-
-.contact-item strong {
-    display: block;
-    color: var(--gray);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-}
-
-.contact-item p, .contact-item a {
-    font-size: 1.2rem;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.contact-item a:hover {
-    color: var(--secondary);
-}
-
-.form-block {
-    background: #FFFFFF;
-    padding: 35px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: var(--primary);
-    font-size: 0.95rem;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-}
-
-.submit-btn {
-    background: var(--secondary);
-    color: #FFFFFF;
-    border: none;
-    padding: 14px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1rem;
-    transition: background 0.2s;
-}
-
-.submit-btn:hover {
-    background: #008742;
-}
-
-footer {
-    background: var(--primary);
-    color: #FFFFFF;
-    padding: 50px 20px;
-    text-align: center;
-    margin-top: 60px;
-    border-top: 4px solid var(--secondary);
-}
-
-.footer-bottom {
-    margin-top: 25px;
-    padding-top: 25px;
-    border-top: 1px solid #1E3A5F;
-    font-size: 0.85rem;
-    color: #94A3B8;
-}
-
-@media (max-width: 768px) {
-    body { padding-top: 130px; }
-    .nav-container { flex-direction: column; gap: 15px; }
-    nav ul { gap: 15px; }
-    #home h1 { font-size: 2.3rem; }
-}
