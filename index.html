@@ -7,8 +7,8 @@
     <style>
         :root {
             --primary: #0f2c59;
-            --logo-blue: #2575fc;
-            --text-dark: #111111;
+            --secondary: #d4af37;
+            --text-dark: #333333;
             --bg-light: #f8f9fa;
             --white: #ffffff;
         }
@@ -28,13 +28,13 @@
 
         /* Header & Navigation */
         header {
-            background-color: var(--white);
-            color: var(--text-dark);
-            padding: 0.5rem 5%;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .nav-container {
@@ -45,37 +45,33 @@
             margin: 0 auto;
         }
 
-        /* Logo Branding Integration */
-        .brand-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
-        .logo-img {
-            height: 70px;
-            width: auto;
-            display: block;
-            object-fit: contain;
+        .logo span {
+            color: var(--secondary);
         }
 
         nav a {
-            color: var(--primary);
+            color: var(--white);
             text-decoration: none;
             margin-left: 1.5rem;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--logo-blue);
+            color: var(--secondary);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(15, 44, 89, 0.92), rgba(15, 44, 89, 0.96)), url('https://unsplash.com') no-repeat center center/cover;
+            background: linear-gradient(rgba(15, 44, 89, 0.9), rgba(15, 44, 89, 0.95)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
             color: var(--white);
-            padding: 6rem 5%;
+            padding: 5rem 5%;
             text-align: center;
         }
 
@@ -85,45 +81,40 @@
         }
 
         .hero h1 {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
-            color: #e2e8f0;
+            color: #e0e0e0;
         }
 
         .badge {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.15);
-            color: var(--white);
-            padding: 0.5rem 1.2rem;
-            font-weight: 600;
-            border-radius: 50px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            font-weight: 700;
+            border-radius: 4px;
             margin-bottom: 1.5rem;
             font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--logo-blue);
-            color: var(--white);
-            padding: 0.9rem 2.2rem;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 0.8rem 2rem;
             text-decoration: none;
             font-weight: 700;
             border-radius: 4px;
             transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
         }
 
         .btn:hover {
-            background-color: #1a62d6;
+            background-color: #ffd700;
             transform: translateY(-2px);
         }
 
@@ -147,7 +138,7 @@
             display: block;
             width: 50px;
             height: 3px;
-            background-color: var(--logo-blue);
+            background-color: var(--secondary);
             margin: 10px auto 0;
         }
 
@@ -159,23 +150,21 @@
 
         .service-card {
             background-color: var(--bg-light);
-            padding: 2.5rem 2rem;
+            padding: 2rem;
             border-radius: 6px;
             border-top: 4px solid var(--primary);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.08);
-            border-top-color: var(--logo-blue);
         }
 
         .service-card h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
         }
 
         /* Contact & Info Section */
@@ -189,20 +178,20 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 4rem;
+            gap: 3rem;
         }
 
         .contact-info h3 {
             color: var(--primary);
             margin-bottom: 1.5rem;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
 
         .info-link {
             display: block;
             color: var(--text-dark);
             text-decoration: none;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             font-size: 1.1rem;
         }
 
@@ -211,7 +200,7 @@
         }
 
         .info-link:hover {
-            color: var(--logo-blue);
+            color: var(--primary);
         }
 
         /* Form Styling */
@@ -219,7 +208,7 @@
             background-color: var(--white);
             padding: 2.5rem;
             border-radius: 6px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .form-group {
@@ -237,24 +226,22 @@
         .form-group textarea {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #cccccc;
             border-radius: 4px;
             font-size: 1rem;
-            background-color: #fafafa;
         }
 
         .form-group input:focus, 
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--logo-blue);
-            background-color: var(--white);
+            border-color: var(--primary);
         }
 
         .submit-btn {
             background-color: var(--primary);
             color: var(--white);
             border: none;
-            padding: 0.9rem 2rem;
+            padding: 0.8rem 2rem;
             font-size: 1rem;
             font-weight: 600;
             border-radius: 4px;
@@ -264,7 +251,7 @@
         }
 
         .submit-btn:hover {
-            background-color: var(--logo-blue);
+            background-color: #174280;
         }
 
         /* Footer */
@@ -272,8 +259,9 @@
             background-color: var(--primary);
             color: var(--white);
             text-align: center;
-            padding: 2.5rem 5%;
+            padding: 2rem 5%;
             font-size: 0.9rem;
+            border-top: 1px solid #174280;
         }
 
         footer p {
@@ -281,14 +269,14 @@
         }
 
         .legal {
-            color: #cbd5e1;
+            color: #a0a0a0;
             font-size: 0.8rem;
         }
 
         @media (max-width: 768px) {
             header { padding: 1rem; }
-            .nav-container { flex-direction: column; text-align: center; gap: 15px; }
-            nav { margin-top: 0.25rem; }
+            .nav-container { flex-direction: column; text-align: center; }
+            nav { margin-top: 1rem; }
             nav a { margin: 0 0.75rem; }
             .hero h1 { font-size: 2rem; }
             .contact-form { padding: 1.5rem; }
@@ -300,10 +288,7 @@
     <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
-            <a href="#" class="brand-link">
-                <!-- Expects the saved image asset 'logo.png' in the same directory -->
-                <img src="logo.png" alt="Frontline Accountancy Experts Ltd Logo" class="logo-img">
-            </a>
+            <div class="logo">Frontline <span>Accountancy</span></div>
             <nav>
                 <a href="#services">Services</a>
                 <a href="#contact">Contact Us</a>
@@ -314,7 +299,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="badge">Member of the Institute of Certified Bookkeepers (ICB)</span>
+            <span class="badge">Proud Member of the ICB</span>
             <h1>Frontline Accountancy Experts Ltd</h1>
             <p>Professional, reliable, and compliant accounting solutions for businesses, landlords, and sole traders across Nottingham and the UK.</p>
             <a href="#contact" class="btn">Get a Free Consultation</a>
@@ -339,3 +324,53 @@
             </div>
             <div class="service-card">
                 <h3>Payroll & Workplace Pensions</h3>
+                <p>Dependable payroll management systems covering staff wages, monthly payslips, student loans, tax deductions, and auto-enrolment rules.</p>
+            </div>
+            <div class="service-card">
+                <h3>Company Formations & Secretarial</h3>
+                <p>Reliable handling of official corporate set-up procedures, business formations, statutory changes, and legal Companies House filings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Info Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <!-- Contact Details -->
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p style="margin-bottom: 1.5rem;">Have questions about your taxes or business structure? Contact our Nottingham-based team today via email, phone, or the contact form.</p>
+                
+                <a href="mailto:info@frontacc.co.uk" class="info-link"><strong>Email:</strong> info@frontacc.co.uk</a>
+                <a href="https://wa.me/447774268823" class="info-link" target="_blank"><strong>WhatsApp:</strong> 07774268823 (Click to Chat)</a>
+                <div class="info-link"><strong>Location:</strong> Nottingham, United Kingdom</div>
+            </div>
+
+            <div class="contact-form">
+                <form action="https://formspree.io/f/mwllgrgn" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="_replyto" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help you?</label>
+                        <textarea name="message" id="message" rows="5" required placeholder="Tell us briefly about your business needs..."></textarea>
+                    </div>
+                    <input type="text" name="_subject" value="New Website Enquiry - Frontline Accountancy" style="display:none;">
+                    <button type="submit" class="submit-btn">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Frontline Accountancy Experts Ltd. All rights reserved.</p>
+        <p class="legal">Company Registration Number: 15494391 | Registered in England & Wales</p>
+    </footer>
+
+</body>
+</html>
