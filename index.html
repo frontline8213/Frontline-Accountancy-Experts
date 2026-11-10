@@ -69,7 +69,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(15, 44, 89, 0.9), rgba(15, 44, 89, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
+            background: linear-gradient(rgba(15, 44, 89, 0.9), rgba(15, 44, 89, 0.95)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
             color: var(--white);
             padding: 5rem 5%;
             text-align: center;
@@ -339,3 +339,38 @@
             <!-- Contact Details -->
             <div class="contact-info">
                 <h3>Get In Touch</h3>
+                <p style="margin-bottom: 1.5rem;">Have questions about your taxes or business structure? Contact our Nottingham-based team today via email, phone, or the contact form.</p>
+                
+                <a href="mailto:info@frontacc.co.uk" class="info-link"><strong>Email:</strong> info@frontacc.co.uk</a>
+                <a href="https://wa.me/447774268823" class="info-link" target="_blank"><strong>WhatsApp:</strong> 07774268823 (Click to Chat)</a>
+                <div class="info-link"><strong>Location:</strong> Nottingham, United Kingdom</div>
+            </div>
+
+            <div class="contact-form">
+                <form action="https://formspree.io/f/mwllgrgn" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="_replyto" id="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help you?</label>
+                        <textarea name="message" id="message" rows="5" required placeholder="Tell us briefly about your business needs..."></textarea>
+                    </div>
+                    <input type="text" name="_subject" value="New Website Enquiry - Frontline Accountancy" style="display:none;">
+                    <button type="submit" class="submit-btn">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Frontline Accountancy Experts Ltd. All rights reserved.</p>
+        <p class="legal">Company Registration Number: 15494391 | Registered in England & Wales</p>
+    </footer>
+
+</body>
+</html>
