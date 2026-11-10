@@ -4,48 +4,402 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontline Accountancy Experts | Nottingham Accountants</title>
-    <!-- Stylesheet omitted for brevity; full HTML layout with responsive design, services, and Formspree contact form included. -->
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #00a854;
+            --dark: #111111;
+            --light: #f8f9fa;
+            --gray: #666666;
+            --border: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+            padding-top: 80px;
+        }
+
+        /* Top Navigation Header Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-area {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #004085;
+        }
+
+        /* Section Layouts and Frameworks */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Banner Area */
+        #home {
+            padding: 120px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f4f7f6 0%, #e9eff5 100%);
+            max-width: 100%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        #home p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        /* Services Grid Formatting (Matches Trent Box Structure) */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.35rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Value Propositions Frame */
+        #why-us {
+            background: var(--light);
+            max-width: 100%;
+        }
+
+        .inner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Cloud Accounting Badges */
+        .software-section {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .software-section h4 {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .software-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .software-logos span {
+            background: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            color: #444;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        /* Dynamic Split-Panel Layout for Contact Details and Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            align-items: start;
+            margin-top: 30px;
+        }
+
+        .contact-details-block {
+            background: #ffffff;
+            padding: 10px 20px;
+            text-align: left;
+        }
+
+        .contact-details-block h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .contact-details-block .subtitle-text {
+            color: var(--gray);
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        .contact-item {
+            margin-bottom: 30px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--dark);
+            font-size: 0.95rem;
+            text-transform: none;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-item p, .contact-item a {
+            font-size: 1.15rem;
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* Modern Client Intake Form Layout */
+        .form-block {
+            background: #ffffff;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            color: var(--dark);
+            background: #ffffff;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #004085;
+        }
+
+        /* Professional Corporate Footer Area */
+        footer {
+            background: var(--dark);
+            color: #ffffff;
+            padding: 60px 20px 30px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .footer-brand p {
+            color: #888;
+            max-width: 400px;
+            font-size: 0.95rem;
+        }
+
+        .footer-compliance {
+            color: #888;
+            font-size: 0.95rem;
+            text-align: right;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+            }
+            #home h1 {
+                font-size: 2.2rem;
+            }
+            .contact-grid {
+                gap: 35px;
+            }
+            .footer-compliance {
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Header Navigation Frame -->
     <header>
         <div class="nav-container">
-            <a href="#home" class="logo-area">Frontline Accountancy Experts</a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#why-us">Why Us</a></li>
-                    <li><a href="#contact" class="cta-btn">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="home">
-        <h1>Frontline Accountancy Experts</h1>
-        <p>Accountancy to keep your business on track</p>
-        <a href="#contact" class="cta-btn">Get in Touch</a>
-    </section>
-
-    <section id="services">
-        <h2 class="section-title">Services We Offer</h2>
-        <div class="grid-3">
-            <div class="card"><h3>Annual Accounts & Corporation Tax</h3><p>Year-end accounts and HMRC compliance.</p></div>
-            <div class="card"><h3>Self Assessment</h3><p>Personal tax returns for sole traders and directors.</p></div>
-            <div class="card"><h3>VAT & Making Tax Digital</h3><p>VAT registration and quarterly submissions.</p></div>
-            <div class="card"><h3>Payroll & Workplace Pensions</h3><p>Payroll execution and auto-enrolment.</p></div>
-            <div class="card"><h3>Company Formations</h3><p>New business incorporation and corporate filings.</p></div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">Let's Have a Chat</h2>
-        <form action="https://formspree.io" method="POST">
-            <input type="text" name="name" required placeholder="Your Name">
-            <input type="email" name="_replyto" required placeholder="Email Address">
-            <textarea name="message" required placeholder="Your Message"></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </section>
-</body>
-</html>
+            <a href="#home" class="logo-area">
