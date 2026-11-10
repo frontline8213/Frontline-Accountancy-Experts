@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontline Accountancy Experts | Nottingham Accountants</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #00a854;
+            --dark: #111111;
+            --light: #f8f9fa;
+            --gray: #666666;
+            --border: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-area {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Fallback graphic placeholder if logo image file isn't uploaded yet */
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--primary);
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #004085;
+            color: white;
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 20px 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        #home {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            text-align: center;
+            background: linear-gradient(135deg, #f4f7f6 0%, #e9eff5 100%);
+            max-width: 100%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        #home p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        /* Services Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        /* Value Proposition */
+        #why-us {
+            background: var(--light);
+            max-width: 100%;
+        }
+
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Software List */
+        .software-section {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .software-section h4 {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .software-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            font-weight: 700;
+            color: #aaa;
+            font-size: 1.3rem;
+        }
+
+        .software-logos span {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .contact-item p, .contact-item a {
+            font-size: 1.2rem;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #ffffff;
+            padding: 60px 20px 30px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: #888;
+            max-width: 300px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #home h1 {
+                font-size: 2.2rem;
+            }
+            #home p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo-area">
+                <!-- If you name your uploaded logo image 'logo.png', uncomment the line below and remove the placeholder span -->
+                <!-- <img src="logo.png" alt="Frontline Accountancy Experts Logo" style="height: 40px;"> -->
+                <span class="logo-icon"></span>
+                Frontline Accountancy
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#contact" class="cta-btn">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content">
+            <h1>Frontline Accountancy Experts</h1>
+            <p>Accountancy to keep your business on track</p>
+            <a href="#contact" class="cta-btn" style="padding: 15px 30px; font-size: 1.1rem;">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Services We Offer</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Annual Accounts & Corporation Tax</h3>
+                <p>Year-end accounts prepared and filed seamlessly with Companies House and HMRC, ensuring total corporation tax compliance.</p>
+            </div>
+            <div class="card">
+                <h3>Self Assessment</h3>
+                <p>Personal tax returns built correctly for sole traders, landlords, company directors, and individuals required to file with HMRC.</p>
+            </div>
+            <div class="card">
+                <h3>VAT & Making Tax Digital</h3>
+                <p>Complete handling of VAT registration, accurate quarterly submissions, and ongoing MTD alignment for hassle-free operations.</p>
+            </div>
+            <div class="card">
