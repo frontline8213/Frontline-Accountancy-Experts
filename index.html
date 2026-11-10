@@ -6,307 +6,336 @@
     <title>Frontline Accountancy Experts Ltd | Nottingham Accountants</title>
     <style>
         :root {
-            --primary: #0f172a;
-            --secondary: #2563eb;
-            --accent: #f8fafc;
-            --text: #334155;
-            --light: #ffffff;
+            --primary: #0f2c59;
+            --secondary: #d4af37;
+            --text-dark: #333333;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            color: var(--text);
+            color: var(--text-dark);
             line-height: 1.6;
-            background-color: var(--light);
+            background-color: var(--white);
         }
+
+        /* Header & Navigation */
         header {
             background-color: var(--primary);
-            color: var(--light);
-            padding: 1.5rem 2rem;
+            color: var(--white);
+            padding: 1rem 5%;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+
         .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
         .logo {
             font-size: 1.4rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            letter-spacing: 0.5px;
         }
+
         .logo span {
             color: var(--secondary);
         }
-        .icb-badge {
-            background-color: #d97706;
-            color: white;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
+
         nav a {
-            color: var(--light);
+            color: var(--white);
             text-decoration: none;
             margin-left: 1.5rem;
-            font-size: 0.95rem;
-            transition: color 0.2s;
+            font-weight: 500;
+            transition: color 0.3s;
         }
+
         nav a:hover {
             color: var(--secondary);
         }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--light);
-            padding: 5rem 2rem;
+            background: linear-gradient(rgba(15, 44, 89, 0.9), rgba(15, 44, 89, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
+            color: var(--white);
+            padding: 5rem 5%;
             text-align: center;
         }
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
+
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            font-weight: 800;
         }
+
         .hero p {
             font-size: 1.2rem;
-            color: #94a3b8;
             margin-bottom: 2rem;
+            color: #e0e0e0;
         }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
         .btn {
             display: inline-block;
             background-color: var(--secondary);
-            color: var(--light);
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            color: var(--primary);
+            padding: 0.8rem 2rem;
             text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.2s;
         }
+
         .btn:hover {
-            background-color: #1d4ed8;
+            background-color: #ffd700;
+            transform: translateY(-2px);
         }
+
+        /* Services Section */
         .services {
-            padding: 5rem 2rem;
-            max-width: 1100px;
+            padding: 5rem 5%;
+            max-width: 1200px;
             margin: 0 auto;
         }
+
         .section-title {
             text-align: center;
             font-size: 2rem;
-            margin-bottom: 3rem;
             color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
         }
-        .grid {
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 10px auto 0;
+        }
+
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
-        .card {
-            background-color: var(--accent);
+
+        .service-card {
+            background-color: var(--bg-light);
             padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
-        .card h3 {
-            margin-bottom: 0.75rem;
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
             color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
         }
+
+        /* Contact & Info Section */
         .contact-section {
-            background-color: var(--accent);
-            padding: 5rem 2rem;
-            border-top: 1px solid #e2e8f0;
+            background-color: var(--bg-light);
+            padding: 5rem 5%;
         }
+
         .contact-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 4rem;
+            gap: 3rem;
         }
-        .contact-info h2 {
+
+        .contact-info h3 {
+            color: var(--primary);
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            font-size: 1.5rem;
         }
-        .contact-details {
-            margin-top: 2rem;
-        }
-        .contact-item {
-            margin-bottom: 1.25rem;
-            display: flex;
-            flex-direction: column;
-        }
-        .contact-item span {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        .contact-item a {
-            color: var(--secondary);
+
+        .info-link {
+            display: block;
+            color: var(--text-dark);
             text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
-        form {
-            background-color: var(--light);
+
+        .info-link strong {
+            color: var(--primary);
+        }
+
+        .info-link:hover {
+            color: var(--primary);
+        }
+
+        /* Form Styling */
+        .contact-form {
+            background-color: var(--white);
             padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
+
         .form-group {
             margin-bottom: 1.25rem;
         }
-        label {
+
+        .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            font-size: 0.9rem;
             color: var(--primary);
         }
-        input, textarea {
+
+        .form-group input, 
+        .form-group textarea {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
             font-size: 1rem;
-            color: var(--primary);
         }
-        input:focus, textarea:focus {
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
             outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            border-color: var(--primary);
         }
-        button {
-            width: 100%;
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.75rem;
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--white);
             border: none;
-            border-radius: 6px;
+            padding: 0.8rem 2rem;
             font-size: 1rem;
             font-weight: 600;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.2s;
+            width: 100%;
+            transition: background 0.3s;
         }
-        button:hover {
-            background-color: #1d4ed8;
+
+        .submit-btn:hover {
+            background-color: #174280;
         }
+
+        /* Footer */
         footer {
             background-color: var(--primary);
-            color: #94a3b8;
-            padding: 2rem;
+            color: var(--white);
             text-align: center;
+            padding: 2rem 5%;
             font-size: 0.9rem;
-            border-top: 1px solid #1e293b;
+            border-top: 1px solid #174280;
         }
-        @media (max-width: 600px) {
-            .nav-container { flex-direction: column; gap: 1rem; }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .legal {
+            color: #a0a0a0;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 1rem; }
+            .nav-container { flex-direction: column; text-align: center; }
+            nav { margin-top: 1rem; }
             nav a { margin: 0 0.75rem; }
             .hero h1 { font-size: 2rem; }
-            form { padding: 1.5rem; }
+            .contact-form { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo">Frontline <span>Accountancy</span></div>
-            <div>
-                <span class="icb-badge">ICB Member</span>
-            </div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <span class="badge">Proud Member of the ICB</span>
             <h1>Frontline Accountancy Experts Ltd</h1>
-            <p>Certified Bookkeeping and Accountancy Services based in Nottingham. Dedicated financial management to help your business thrive.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
+            <p>Professional, reliable, and compliant accounting solutions for businesses, landlords, and sole traders across Nottingham and the UK.</p>
+            <a href="#contact" class="btn">Get a Free Consultation</a>
         </div>
     </section>
 
-    <section class="services">
-        <h2 class="section-title">Our Core Services</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Certified Bookkeeping</h3>
-                <p>Meticulous day-to-day transaction recording, ledger management, and financial record compliance under strict ICB standards.</p>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Annual Accounts & Corporation Tax</h3>
+                <p>Complete year-end financial statements prepared accurately alongside strategic corporation tax returns to keep your company fully compliant.</p>
             </div>
-            <div class="card">
-                <h3>Year-End Accounts</h3>
-                <p>Preparation of accurate annual financial statements ready for corporate tax returns and statutory filing obligations.</p>
+            <div class="service-card">
+                <h3>Self Assessment & Personal Tax</h3>
+                <p>Dedicated tax management tailored explicitly for sole traders, individual landlords, and company directors to reduce administrative burdens.</p>
             </div>
-            <div class="card">
-                <h3>VAT & Tax Returns</h3>
-                <p>Timely preparation and submission of VAT, making tax digital (MTD) compliance, and corporate tax structuring guidance.</p>
+            <div class="service-card">
+                <h3>VAT & Making Tax Digital</h3>
+                <p>Ensure seamless compliance with current MTD rules using real-time calculations, complete digital record keeping, and prompt submission cycles.</p>
+            </div>
+            <div class="service-card">
+                <h3>Payroll & Workplace Pensions</h3>
+                <p>Dependable payroll management systems covering staff wages, monthly payslips, student loans, tax deductions, and auto-enrolment rules.</p>
+            </div>
+            <div class="service-card">
+                <h3>Company Formations & Secretarial</h3>
+                <p>Reliable handling of official corporate set-up procedures, business formations, statutory changes, and legal Companies House filings.</p>
             </div>
         </div>
     </section>
 
+    <!-- Contact & Info Section -->
     <section id="contact" class="contact-section">
         <div class="contact-container">
+            <!-- Contact Details -->
             <div class="contact-info">
-                <h2>Contact Our Experts</h2>
-                <p>Have a question or looking to switch accountants? Drop us a message or reach out through our direct communication channels.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span>Email Address</span>
-                        <a href="mailto:info@frontacc.co.uk">info@frontacc.co.uk</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>WhatsApp Business</span>
-                        <a href="https://wa.me/447774268823" target="_blank">07774 268823</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>Registered Location</span>
-                        <p>Nottingham, United Kingdom</p>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <form action="https://formspree.io/f/mwllgrgn" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="_replyto" required placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="07123 456789">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Enquiry</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="How can we help your business?"></textarea>
-                    </div>
-                    <!-- Formspree configurations -->
-                    <input type="hidden" name="_subject" value="New Website Lead - Frontline Accountancy">
-                    <button type="submit">Submit Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Frontline Accountancy Experts Ltd. All rights reserved. Registered in Nottingham, UK.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Certified member of the Institute of Certified Bookkeepers (ICB).</p>
-    </footer>
-
-</body>
-</html>
+                <h3>Get In Touch</h3>
