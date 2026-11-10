@@ -209,14 +209,28 @@
             font-weight: 600;
         }
 
-        .contact-wrapper {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
+        /* Unified Layout Fix for Contact Form & Info Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-details-block {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: left;
         }
 
         .contact-item {
-            margin: 25px 0;
+            margin-bottom: 25px;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
         }
 
         .contact-item strong {
@@ -225,16 +239,66 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 5px;
         }
 
         .contact-item p, .contact-item a {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--dark);
             text-decoration: none;
         }
 
         .contact-item a:hover {
             color: var(--primary);
+        }
+
+        /* Form Layout Styles */
+        .form-block {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            color: var(--dark);
+            background: #ffffff;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0,86,179,0.1);
+        }
+
+        .submit-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #008742;
         }
 
         footer {
@@ -290,6 +354,9 @@
             #home h1 {
                 font-size: 2.2rem;
             }
+            .contact-grid {
+                gap: 35px;
+            }
         }
     </style>
 </head>
@@ -325,34 +392,3 @@
         <div class="grid-3">
             <div class="card">
                 <h3>Annual Accounts & Corporation Tax</h3>
-                <p>Year-end accounts prepared and filed seamlessly with Companies House and HMRC, ensuring total corporation tax compliance.</p>
-            </div>
-            <div class="card">
-                <h3>Self Assessment</h3>
-                <p>Personal tax returns built correctly for sole traders, landlords, company directors, and individuals required to file with HMRC.</p>
-            </div>
-            <div class="card">
-                <h3>VAT & Making Tax Digital</h3>
-                <p>Complete handling of VAT registration, accurate quarterly submissions, and ongoing MTD alignment for hassle-free operations.</p>
-            </div>
-            <div class="card">
-                <h3>Payroll & Workplace Pensions</h3>
-                <p>Comprehensive payroll execution, RTI submissions, production of structured employee payslips/P60s, and managed pension auto-enrolment.</p>
-            </div>
-            <div class="card">
-                <h3>Company Formations</h3>
-                <p>New business incorporation, active confirmation statements, registered office facilities, and day-to-day corporate filing management.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="why-us">
-        <div class="inner-container">
-            <h2 class="section-title">Why Clients Work With Us</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Fixed Upfront Fees</h3>
-                    <p>Know exactly what you are paying before any financial work begins. We commit to transparency with absolutely zero surprise invoices.</p>
-                </div>
-                <div class="card">
-                    <h3>No-Jargon Communication</h3>
