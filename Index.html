@@ -29,9 +29,9 @@
             color: var(--dark);
             line-height: 1.6;
             background-color: #ffffff;
+            padding-top: 80px;
         }
 
-        /* Navigation */
         header {
             position: fixed;
             top: 0;
@@ -53,7 +53,7 @@
 
         .logo-area {
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--primary);
             text-decoration: none;
             display: flex;
@@ -61,19 +61,11 @@
             gap: 10px;
         }
 
-        /* Fallback graphic placeholder if logo image file isn't uploaded yet */
-        .logo-icon {
-            width: 35px;
-            height: 35px;
-            background: var(--primary);
-            border-radius: 6px;
-            display: inline-block;
-        }
-
         nav ul {
             display: flex;
             list-style: none;
             gap: 25px;
+            align-items: center;
         }
 
         nav a {
@@ -89,7 +81,7 @@
 
         .cta-btn {
             background: var(--primary);
-            color: white;
+            color: white !important;
             padding: 10px 20px;
             border-radius: 4px;
             text-decoration: none;
@@ -99,12 +91,10 @@
 
         .cta-btn:hover {
             background: #004085;
-            color: white;
         }
 
-        /* Sections General */
         section {
-            padding: 100px 20px 80px 20px;
+            padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -126,10 +116,8 @@
             border-radius: 2px;
         }
 
-        /* Hero Section */
         #home {
-            padding-top: 180px;
-            padding-bottom: 120px;
+            padding: 120px 20px;
             text-align: center;
             background: linear-gradient(135deg, #f4f7f6 0%, #e9eff5 100%);
             max-width: 100%;
@@ -153,7 +141,6 @@
             margin-bottom: 40px;
         }
 
-        /* Services Grid */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -180,18 +167,16 @@
             color: var(--primary);
         }
 
-        /* Value Proposition */
         #why-us {
             background: var(--light);
             max-width: 100%;
         }
 
-        .why-container {
+        .inner-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Software List */
         .software-section {
             text-align: center;
             margin-top: 60px;
@@ -212,10 +197,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 40px;
-            font-weight: 700;
-            color: #aaa;
-            font-size: 1.3rem;
+            gap: 20px;
         }
 
         .software-logos span {
@@ -224,23 +206,17 @@
             border-radius: 4px;
             border: 1px solid var(--border);
             color: #555;
+            font-weight: 600;
         }
 
-        /* Contact Section */
         .contact-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            margin-top: 30px;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .contact-item {
-            margin-bottom: 25px;
+            margin: 25px 0;
         }
 
         .contact-item strong {
@@ -248,10 +224,11 @@
             color: var(--gray);
             font-size: 0.9rem;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .contact-item p, .contact-item a {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--dark);
             text-decoration: none;
         }
@@ -260,7 +237,6 @@
             color: var(--primary);
         }
 
-        /* Footer */
         footer {
             background: var(--dark);
             color: #ffffff;
@@ -291,7 +267,7 @@
 
         .footer-brand p {
             color: #888;
-            max-width: 300px;
+            max-width: 400px;
         }
 
         .footer-bottom {
@@ -303,49 +279,39 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
                 gap: 15px;
-                text-align: center;
             }
             nav ul {
                 gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
             }
             #home h1 {
                 font-size: 2.2rem;
-            }
-            #home p {
-                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <div class="nav-container">
             <a href="#home" class="logo-area">
-    <img src="logo.png" alt="Frontline Accountancy Experts Logo" style="height: 50px; width: auto; object-fit: contain; margin-right: 5px;">
-                
-                Frontline Accountancy
+                <img src="logo.png" alt="Logo" style="height: 45px; width: auto; object-fit: contain;" onerror="this.style.display='none';">
+                Frontline Accountancy Experts
             </a>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
                     <li><a href="#contact" class="cta-btn">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home">
         <div class="hero-content">
             <h1>Frontline Accountancy Experts</h1>
@@ -354,7 +320,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services">
         <h2 class="section-title">Services We Offer</h2>
         <div class="grid-3">
@@ -371,3 +336,23 @@
                 <p>Complete handling of VAT registration, accurate quarterly submissions, and ongoing MTD alignment for hassle-free operations.</p>
             </div>
             <div class="card">
+                <h3>Payroll & Workplace Pensions</h3>
+                <p>Comprehensive payroll execution, RTI submissions, production of structured employee payslips/P60s, and managed pension auto-enrolment.</p>
+            </div>
+            <div class="card">
+                <h3>Company Formations</h3>
+                <p>New business incorporation, active confirmation statements, registered office facilities, and day-to-day corporate filing management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <div class="inner-container">
+            <h2 class="section-title">Why Clients Work With Us</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Fixed Upfront Fees</h3>
+                    <p>Know exactly what you are paying before any financial work begins. We commit to transparency with absolutely zero surprise invoices.</p>
+                </div>
+                <div class="card">
+                    <h3>No-Jargon Communication</h3>
